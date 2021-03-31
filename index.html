@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Coding quiz application based on time.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Code Quiz App</title>
+    <link rel="stylesheet" href="/assets/screenshot.png">
+
+    <style>
+      /* GLOBAL STYLES */
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        align-items: center;
+      }
+
+      /* LANDING PAGE */
+      .landing-page {
+        height: 100vh;
+        width: 100%;
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        background-color: #333;
+        transition: 2.2s ease;
+        display: none;
+      }
+
+      /* HEADER */
+      header {
+        background-color: lightblue;
+        display: flex;
+        height: 40vh;
+        justify-content: center;
+      }
+      header article {
+        height: 50px;
+        width: 100px;
+        border: 1px dashed #000;
+        box-shadow: 5px 4px 10px rgba( 24, 242, 24, 0.8);
+        margin: 100px 0;
+        display: flex;
+        justify-content: center;
+      }
+      header button {
+        padding: 2%;
+        background-color: transparent;
+        margin: 0 200px;
+        height: 50px;
+        width: 100px;
+        border-radius: 25px;
+      }
+
+      /* MAIN */
+      main {
+        display: flex;
+        justify-content: center;
+        padding: 5%;
+        margin: 5%;
+        border: 1px dashed #000;
+      }
+      main section {
+        width: 50%;
+      }
+    </style>
+  </head>
+  <body>
+
+    <div class="landing-page">
+      <h1>Welcome to Coding Quiz</h1>
+      <button id="landing-page-button" class="btn">Enter</button>
+    </div>
+    
+    <header>
+      <h4>Timer:</h4>
+      <article id="game-timer">10:00</article>
+      
+      <button id="start-button">Start</button>
+      
+      <h4>Score:</h4>
+      <article id="score">0</article>
+    </header>
+    
+    <main>
+
+      <section id="questions-box">
+        <h2>Question?</h2>
+        <p>What is a method?</p>
+      </section>
+
+      <section>
+        <form>
+          <input id="answers-box" type="textarea"/>
+          <button id="answers-button">Submit</button>
+        </form>
+      </section>
+
+    </main>
+
+    <script src="./Assets/js/script.js" async defer></script>
+  </body>
+</html>
