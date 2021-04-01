@@ -1,69 +1,77 @@
 const button = document.getElementById("landing-page-button")
-      const landingPage = document.getElementByClass("landing-page")
-      const gameTimer = document.getElementById("game-timer")
-      const questionsBox = document.getElementById("questions-box")
-      const answersBox = document.getElementById("answers-box")
-      const answerButton = document.getElementById("answers-button")
-      const startButton = document.getElementById("start-button")
+const landingPage = document.getElementById("landing-page")
+const gameTimer = document.getElementById("game-timer");
+const questionsBox = document.getElementById("questions-box");
+const answerForm = document.getElementById("answer-form");
+const answerInput = document.getElementById("answer-input");
+const startButton = document.getElementById("start-button");
 
-      const questions = [
-        {
-          question: 'What is a method?',
-          answer: 'A function that is nested inside of an object'
-        },
-        {
-          question: '',
-          answer: ''
-        },
-        {
-          question: '',
-          answer: ''
-        }
-      ]
+console.info(startButton)
 
-      console.info(questions[0].question)
+const questions = [
+  {
+    question: 'What is a method?',
+    answer: 'A function that is nested inside of an object'
+  },
+  {
+    question: 'What is a function?',
+    answer: ''
+  },
+  {
+    question: 'What does HTML stand for?',
+    answer: ''
+  }
+];
 
-      questionsBox.innerHTML = `
-      <div>
-        <p>Question: ${questions[0].question}</p>
-        <p>Answer: ${questions[0].answer}</p>
-      </div>
-      `
+console.info(questions[1])
+questionsBox.innerHTML = `
+<div>
+  <p>Question: ${questions[0].question}</p>
+</div>
+`;
 
-      const questionCounter = 0
+const questionCounter = 0;
+let time = 600;
 
-      const time = 0
-      setTimeout()
-      gameTimer.innerHTML = time;
+const countDown = () => { 
+  time--; 
+  let hours = Math.floor(time / 60 / 60);
+  let minutes = Math.floor(time / 60) - (hours * 60);
+  let seconds = time % 60;
+  let formattedTime = minutes + ':' + seconds;
+  gameTimer.innerHTML = formattedTime;
+};
 
-      const score = 0;
+setInterval(countDown, 1000);
+gameTimer.innerHTML = time;
 
-      questionsBox.innerHTML = questions[questionCounter]
+const score = 0;
 
-      
-      const enterSite = () => {
-        console.info("Entering Site!")
-        landingPage.style.display = "hidden";
-      }
+questionsBox.innerHTML = questions[questionCounter]
 
-      const showQuestions = () => {
 
-      }
-      
-      const checkAnswer = (event) => {
-        event.preventDefault();
-        const answer = event.target.value;
-        console.info("Please hold, I am checking your answer...", answer);
-      }
+const enterSite = () => {
+  console.info("Entering Site!");
+  landingPage.style.display = "hidden";
+};
 
-      button.addEventListener("click", {
+const showQuestions = () => {
 
-      })
+};
 
-      startbutton.addEventListener('click', event => {
-        console.info("I have been clicked!")
-      })
-      answerButton.addEventListener("click", event => {
-        event.preventDefault();
-        console.info("I have been clicked.")
-      })
+const checkAnswer = (event) => {
+  event.preventDefault();
+  const answer = event.target.value;
+  console.info("Please hold, I am checking your answer...", answer);
+};
+
+button.addEventListener("click", {
+
+});
+
+startButton.addEventListener("click", console.info("I have been clicked!"));
+
+answerForm.addEventListener("submit", event => {
+  event.preventDefault();
+  console.info("I have been clicked.", event);
+});

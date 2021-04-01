@@ -40,18 +40,19 @@
         height: 50px;
         width: 100px;
         border: 1px dashed #000;
-        box-shadow: 5px 4px 10px rgba( 24, 242, 24, 0.8);
+        box-shadow: 5px 4px 10px rgba( 0, 0, 0, 0.3);
         margin: 100px 0;
         display: flex;
         justify-content: center;
       }
-      header button {
+      .btn {
         padding: 2%;
         background-color: transparent;
         margin: 0 200px;
         height: 50px;
         width: 100px;
         border-radius: 25px;
+        box-shadow: 5px 4px 10px rgba( 0, 0, 0, 0.3);
       }
 
       /* MAIN */
@@ -65,11 +66,17 @@
       main section {
         width: 50%;
       }
+
+      #answer-input {
+        border-radius: 25px;
+        width: 80%;
+        padding: 2%;
+      }
     </style>
   </head>
   <body>
 
-    <div class="landing-page">
+    <div id="landing-page" class="landing-page">
       <h1>Welcome to Coding Quiz</h1>
       <button id="landing-page-button" class="btn">Enter</button>
     </div>
@@ -78,8 +85,8 @@
       <h4>Timer:</h4>
       <article id="game-timer">10:00</article>
       
-      <button id="start-button">Start</button>
-      
+      <button id="start-button" class="btn">Start</button>
+
       <h4>Score:</h4>
       <article id="score">0</article>
     </header>
@@ -92,9 +99,9 @@
       </section>
 
       <section>
-        <form>
-          <input id="answers-box" type="textarea"/>
-          <button id="answers-button">Submit</button>
+        <form id="answer-form">
+          <textarea id="answer-input" name="answer" rows="5"></textarea>
+          <button class="btn">Submit</button>
         </form>
       </section>
 
