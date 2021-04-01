@@ -3,10 +3,26 @@ const landingPage = document.getElementById("landing-page")
 const gameTimer = document.getElementById("game-timer");
 const questionsBox = document.getElementById("questions-box");
 const answerForm = document.getElementById("answer-form");
-const answerInput = document.getElementById("answer-input");
 const startButton = document.getElementById("start-button");
+let answerInput = document.getElementById("answer-input");
+let scoreEl = document.getElementById('score');
 
-console.info(startButton)
+const enterSite = () => {
+  console.info("Entering Site!");
+  landingPage.style.display = "hidden";
+};
+  
+let questionCounter = 0;
+let time = 600; //600 seconds = 10 minutes
+let score = 0;
+
+gameTimer.innerHTML = (time / 60).toFixed(2); //set default starting time to 10 minutes.
+
+const setScore = () => {
+  scoreEl.innerHTML = score; //set default score to 0.
+};
+
+setScore();
 
 const questions = [
   {
@@ -15,63 +31,90 @@ const questions = [
   },
   {
     question: 'What is a function?',
-    answer: ''
+    answer: 'a'
   },
   {
     question: 'What does HTML stand for?',
-    answer: ''
+    answer: 'b'
   }
 ];
 
-console.info(questions[1])
-questionsBox.innerHTML = `
-<div>
-  <p>Question: ${questions[0].question}</p>
-</div>
-`;
+console.log(answerInput)
 
-const questionCounter = 0;
-let time = 600;
+const setQuestion = () => {
+  if (questions) {
+    questionsBox.innerHTML = `
+      <div>
+        <p>Question: ${questions[questionCounter].question}</p>
+      </div>
+    `;
+  }
+};
+
+setQuestion();
+
+const endGame = () => {
+  if (score > (questions.length * 0.8)) {
+    alert("Congratulation's, you have won! confetti confetti.");
+    console.info({message: "You won!"});
+  } else {
+    alert("Sorry, practice a little more and try again.");
+    console.info({message: "You lost!"});
+  }
+
+};
 
 const countDown = () => { 
   time--; 
-  let hours = Math.floor(time / 60 / 60);
-  let minutes = Math.floor(time / 60) - (hours * 60);
+  let minutes = Math.floor(time / 60);
   let seconds = time % 60;
   let formattedTime = minutes + ':' + seconds;
   gameTimer.innerHTML = formattedTime;
 };
 
-setInterval(countDown, 1000);
-gameTimer.innerHTML = time;
-
-const score = 0;
-
-questionsBox.innerHTML = questions[questionCounter]
-
-
-const enterSite = () => {
-  console.info("Entering Site!");
-  landingPage.style.display = "hidden";
+const startTimer = () => {
+  if (time > 0) { setInterval(countDown, 1000); }
+  else { endGame(); }
 };
 
-const showQuestions = () => {
-
+const resetTimer = () => {
+  time = 600;
 };
 
 const checkAnswer = (event) => {
   event.preventDefault();
-  const answer = event.target.value;
-  console.info("Please hold, I am checking your answer...", answer);
+  if (answerInput.value.trim() === questions[questionCounter].answer) {
+    score ++;
+    answerInput.value = '';
+    questionCounter++;
+    setScore();
+    setQuestion();
+    console.info(questionCounter, questions.length)
+    if (questionCounter === questions.length) { endGame(); }
+  } else {
+    answerInput.value = '';
+    questionCounter++;
+    setScore();
+    setQuestion();
+    console.info(questionCounter, questions.length)
+    if (questionCounter === questions.length) { endGame(); }
+  }
 };
 
+
+//Event Listeners
 button.addEventListener("click", {
 
 });
 
-startButton.addEventListener("click", console.info("I have been clicked!"));
+startButton.addEventListener("click", () => { 
+  console.info("Timer is started!"); 
+  startTimer();
+  document.getElementById("main-section").style.display = "block";
+});
 
 answerForm.addEventListener("submit", event => {
   event.preventDefault();
   console.info("I have been clicked.", event);
+  checkAnswer(event);
 });

@@ -62,6 +62,7 @@
         padding: 5%;
         margin: 5%;
         border: 1px dashed #000;
+        display: none;
       }
       main section {
         width: 50%;
@@ -83,20 +84,17 @@
     
     <header>
       <h4>Timer:</h4>
-      <article id="game-timer">10:00</article>
+      <article id="game-timer"></article>
       
       <button id="start-button" class="btn">Start</button>
 
       <h4>Score:</h4>
-      <article id="score">0</article>
+      <article id="score"></article>
     </header>
     
-    <main>
+    <main id="main-section">
 
-      <section id="questions-box">
-        <h2>Question?</h2>
-        <p>What is a method?</p>
-      </section>
+      <section id="questions-box"></section>
 
       <section>
         <form id="answer-form">
