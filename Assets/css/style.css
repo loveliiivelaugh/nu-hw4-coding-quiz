@@ -1,0 +1,180 @@
+/* GLOBAL STYLES */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  align-items: center;
+}
+
+/* LANDING PAGE */
+.landing-page {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  transition: 2.2s ease;
+  display: box;
+}
+
+.highscores-page {
+  height: 100vh;
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+  transition: 2.2s ease;
+  display: none; /* toggle to box */
+}
+
+body {
+  min-height: 100vh;
+  text-align: center;
+  background: linear-gradient(#fff);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+  font-size: 250%;
+}
+
+h2 {
+  text-decoration: underline;
+}
+
+#game-stats {
+  width: auto;
+  margin: auto;
+  justify-content: center;
+}
+
+.btn {
+  padding: 2% 5%;
+  background-color: rgb(144, 238, 144);
+  margin: 0 200px;
+  height: 50px;
+  width: 100px;
+  border-radius: 25px;
+  box-shadow: 5px 4px 10px rgba( 0, 0, 0, 0.3);
+}
+
+.clear-btn {
+  text-align: right;
+  background-color: transparent;
+  font-weight: 1000;
+  font-size:x-large;
+  color: #f00;
+  border: 1px solid #f00;
+  padding: 0.5%;
+  float: right;
+  margin: 0 5% 0;
+}
+
+.clear-btn:hover {
+  box-shadow: 5px 4px 10px rgba( 0, 0, 0, 0.3);
+}
+
+.answer-btn {
+  background-color: #632063;
+  padding: 2% 5%;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+}
+
+#questions-box h3 {
+  text-align: left;
+  font-size:200%;
+}
+
+#questions-box ul {
+  text-align: left;
+}
+
+#questions-box ul li {
+  margin: 2%;
+  list-style-type: none;
+}
+
+/* MAIN */
+main {
+  display: none;
+  margin: 8%;
+  height: 100vh;
+  text-align: center;
+  justify-content: center;
+  transition: 2.2s ease;
+}
+
+.main-nav {
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.main-nav ul {
+  list-style-type: none;
+}
+
+.main-nav button {
+  float: left;
+  background-color: transparent;
+  border: none;
+  color: #632063;
+  font-size: 120%;
+  width: auto;
+  list-style-type: none;
+  margin: 2%;
+}
+
+#game-timer {
+  color: #632063;
+  font-size: 120%;
+  float: right;
+  margin: 2% 20% 0 0;
+}
+
+
+#answer-input {
+  border-radius: 25px;
+  width: 80%;
+  padding: 2%;
+}
+
+#answer-alert {
+  width: 100%;
+}
+
+.alert-title {
+  font-size: 300%;
+  color: #999
+}
+
+/* Table */
+table {
+  width: 80%;
+  margin: auto;
+  box-shadow: 5px 4px 10px rgba( 0, 0, 0, 0.3);
+}
+
+th {
+  padding: 2%;
+  width: auto;
+}
+
+td {
+  padding: 1%;
+}
+tr:nth-child(even) {
+  background-color: rgba( 0, 0, 0, 0.2);
+}
+
+tr:nth-child(odd) {
+  background: linear-gradient(#ddd, #2bf);
+}
+
+tr:last-child {
+  background-color: rgb(144, 238, 144);
+}
+
+#end-game-page {
+  display: none; /*set default display of end game page to none */
+}

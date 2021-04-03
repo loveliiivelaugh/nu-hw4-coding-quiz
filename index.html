@@ -6,74 +6,7 @@
     <meta name="description" content="Coding quiz application based on time.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Code Quiz App</title>
-    <link rel="stylesheet" href="/assets/screenshot.png">
-
-    <style>
-      /* GLOBAL STYLES */
-      * {
-        padding: 0;
-        margin: 0;
-        box-sizing: border-box;
-        align-items: center;
-      }
-
-      /* LANDING PAGE */
-      .landing-page {
-        height: 100vh;
-        width: 100%;
-        display: flex;
-        text-align: center;
-        justify-content: center;
-        background-color: #333;
-        transition: 2.2s ease;
-        display: none;
-      }
-
-      /* HEADER */
-      header {
-        background-color: lightblue;
-        display: flex;
-        height: 40vh;
-        justify-content: center;
-      }
-      header article {
-        height: 50px;
-        width: 100px;
-        border: 1px dashed #000;
-        box-shadow: 5px 4px 10px rgba( 0, 0, 0, 0.3);
-        margin: 100px 0;
-        display: flex;
-        justify-content: center;
-      }
-      .btn {
-        padding: 2%;
-        background-color: transparent;
-        margin: 0 200px;
-        height: 50px;
-        width: 100px;
-        border-radius: 25px;
-        box-shadow: 5px 4px 10px rgba( 0, 0, 0, 0.3);
-      }
-
-      /* MAIN */
-      main {
-        display: flex;
-        justify-content: center;
-        padding: 5%;
-        margin: 5%;
-        border: 1px dashed #000;
-        display: none;
-      }
-      main section {
-        width: 50%;
-      }
-
-      #answer-input {
-        border-radius: 25px;
-        width: 80%;
-        padding: 2%;
-      }
-    </style>
+    <link rel="stylesheet" href="./Assets/css/style.css">
   </head>
   <body>
 
@@ -82,31 +15,42 @@
       <button id="landing-page-button" class="btn">Enter</button>
     </div>
     
-    <header>
-      <h4>Game Stats:</h4>
-      <article id="game-stats"></article>
+    <div id="highscores-page" class="highscores-page">
+      <h2>Game Statistics</h2>
+      <div id="game-stats"></div>
+      <button id="clear-history" class="clear-btn">Clear Highscores</button>
+      <button id="start-button" class="clear-btn">Go Back</button>
+    </div>
 
-      <h4>Timer:</h4>
-      <article id="game-timer"></article>
-      
-      <button id="start-button" class="btn">Start</button>
-
-      <h4>Score:</h4>
-      <article id="score"></article>
-    </header>
+    
     
     <main id="main-section">
-
+      <nav class="main-nav">
+        <ul>
+          <li><button id="highscores-page-btn">View Highscores</button></li>
+          <li><span id="game-timer">30</span></li>
+        </ul>
+      </nav>
+  
       <section id="questions-box"></section>
 
-      <section>
-        <form id="answer-form">
-          <textarea id="answer-input" name="answer" rows="5"></textarea>
-          <button class="btn">Submit</button>
-        </form>
+      <section id="answer-alert">
+        <hr />
+        <h4 class="alert-title">Test!</h4>
       </section>
 
+      
     </main>
+    
+    
+    <div id="end-game-page">
+      <h1>Thanks for playing!</h1>
+      <form>
+        <input id="initials-input" type="text" name="initials" placeholder="Please enter your intials." />
+        <input id="score-input" type="number" name="score" value="30" disable="true"  width="auto" />
+        <input type="submit" value="Enter" />
+      </form>
+    </div>
 
     <script src="./Assets/js/script.js" async defer></script>
   </body>
