@@ -12,43 +12,46 @@
 
     <div id="landing-page" class="landing-page">
       <h1>Welcome to Coding Quiz</h1>
-      <button id="landing-page-button" class="btn">Enter</button>
+      <h5>Test your skills with this JavaScript speed quiz. Answer a series of multiple choice or fill in the blank answers, either as many as you can until the time runs out or if you complete all the questions.</h5>
+      <button id="landing-page-button" class="btn">Start Quiz</button>
     </div>
     
     <div id="highscores-page" class="highscores-page">
-      <h2>Game Statistics</h2>
+      <h1>Highscores</h1>
       <div id="game-stats"></div>
-      <button id="clear-history" class="clear-btn">Clear Highscores</button>
-      <button id="start-button" class="clear-btn">Go Back</button>
+      <button id="clear-history" class="btn">Clear Highscores</button>
+      <button id="start-button" class="btn">Go Back</button>
     </div>
-
-    
     
     <main id="main-section">
       <nav class="main-nav">
         <ul>
-          <li><button id="highscores-page-btn">View Highscores</button></li>
+          <li><button id="highscores-page-btn" class="btn">View Highscores</button></li>
           <li><span id="game-timer">30</span></li>
         </ul>
       </nav>
   
-      <section id="questions-box"></section>
+      <div class="questions-container">
 
-      <section id="answer-alert">
-        <hr />
-        <h4 class="alert-title">Test!</h4>
-      </section>
+        <section id="questions-box"></section>
 
-      
+        <section id="answer-alert"></section>
+      </div>
     </main>
     
     
     <div id="end-game-page">
-      <h1>Thanks for playing!</h1>
+      <h1>All done!</h1>
       <form>
-        <input id="initials-input" type="text" name="initials" placeholder="Please enter your intials." />
-        <input id="score-input" type="number" name="score" value="30" disable="true"  width="auto" />
-        <input type="submit" value="Enter" />
+        <p id="score-input"></p>
+        <label>Enter initials</label>
+        <input 
+          id="initials-input" 
+          type="text" 
+          name="initials"
+          placeholder="s.n.l" 
+        />
+        <input type="submit" class="btn" value="Enter"/>
       </form>
     </div>
 

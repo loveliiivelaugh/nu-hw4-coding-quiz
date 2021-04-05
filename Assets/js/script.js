@@ -154,7 +154,7 @@ const questions = [
   },
 
 ];
-//assign Glogbal variables. --> needs to be cleaned up, some need to be taken away and some need to be added
+//assign Glogbal variables.
 const gameStatsArticle = document.getElementById("game-stats");
 const gameTimer = document.getElementById("game-timer");
 const landingPage = document.getElementById("landing-page")
@@ -188,14 +188,14 @@ const setQuestion = () => {
   //if we even have questions in our questions array. if there is even data.
   if (questions) {
     return (
-      //update the innerHTML to the selected question and answer object.
+      //update the innerHTML to the selected question and answers object.
       questionsBox.innerHTML = `
       <h3>${questions[questionCounter].question}</h3>
       <ul>
         <li>
           <button 
             id="answer-button" 
-            class="answer-btn" 
+            class="btn answer-btn" 
             data-correct="${questions[questionCounter].answerA.correct}" 
             onclick="handleAnswer(event)"
           >
@@ -205,7 +205,7 @@ const setQuestion = () => {
         <li>
           <button 
             id="answer-button" 
-            class="answer-btn" 
+            class="btn answer-btn" 
             data-correct="${questions[questionCounter].answerB.correct}" 
             onclick="handleAnswer(event)"
           >
@@ -215,7 +215,7 @@ const setQuestion = () => {
         <li>
           <button 
             id="answer-button" 
-            class="answer-btn" 
+            class="btn answer-btn" 
             data-correct="${questions[questionCounter].answerC.correct}" 
             onclick="handleAnswer(event)"
           >
@@ -225,7 +225,7 @@ const setQuestion = () => {
         <li>
           <button 
             id="answer-button" 
-            class="answer-btn" 
+            class="btn answer-btn" 
             data-correct="${questions[questionCounter].answerD.correct}" 
             onclick="handleAnswer(event)"
           >
@@ -246,15 +246,10 @@ const setGameStats = () => {
   ` : //if there is gameStatsData then show the game stats board
   gameStatsArticle.innerHTML = `
   <table>
-    <tr>
-      <th>Initials</th>
-      <th>Score</th>
-    </tr>
     ${//loop through every game thats been played and make a row in the table from it
       gameStatsData.map(stats => ` 
       <tr>
-        <td>${stats.initials}</td>
-        <td>${stats.score}</td>
+        <td>${stats.initials} - ${stats.score}</td>
       </tr>`
       )}
   </table>
@@ -284,10 +279,10 @@ const alertHandler = (correct) => {
     //update the innerHTML 
     alertEl.innerHTML = `
       <hr />
-      <h2 class="alert-title">"Correct!"</h2>
+      <h2 class="alert-title">Correct!</h2>
     `;
     //change background to lightgreen
-    alertEl.style.backgroundColor = "lightgreen";
+    // alertEl.style.backgroundColor = "lightgreen";
     //and show it
     alertEl.style.display = "block";
     //then after 3 seconds
@@ -301,10 +296,10 @@ const alertHandler = (correct) => {
     //update the innerHTML
     alertEl.innerHTML = `
       <hr />
-      <h2 class="alert-title">"Incorrect!"</h2>
+      <h2 class="alert-title">Incorrect!</h2>
     `;
     //change the background to red.
-    alertEl.style.backgroundColor = "red";
+    // alertEl.style.backgroundColor = "red";
     //and show it
     alertEl.style.display = "block";
     //after 3 seconds
@@ -316,6 +311,7 @@ const alertHandler = (correct) => {
 };
 // function to check the questionCounter and questions.length to look for a condition to end the game.
 const checkCounters = () => {
+  console.info(questionCounter, questions.length, questionCounter === questions.length);
   //if the questionCounter is equal to or somehow greater than questions.length the game will end.
   if ( questionCounter >= questions.length ) {
     alert("Congratulation's, you have won! confetti confetti.");
@@ -410,13 +406,13 @@ const startTimer = () => { timer = setInterval(countDown, 1000); };
 //function that handles the behavior when the game ends.
 const endGame = () => {
   
-  scoreInput.value = time;
+  scoreInput.textContent = `Your final score is ${time}.`;
   //switch pages
   switchPage("toEndGame");
   return;
 };
 
-//special switch case function to handle switching the pages.
+//special switch case function to handle routing and switching the pages.
 const switchPage = (page) => {
   switch (page) {
     case "toMain":
@@ -428,7 +424,7 @@ const switchPage = (page) => {
       //switch from highscores page or endGame page to landing page
       document.getElementById("end-game-page").style.display = "none";
       document.querySelector("#highscores-page").style.display = "none";
-      document.querySelector("#landing-page").style.display = "flex";
+      document.querySelector("#landing-page").style.display = "block";
       break;
     case "toHighScores":
       //switch from main page or endGame page to highscores page

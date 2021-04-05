@@ -10,10 +10,17 @@
 .landing-page {
   height: 100vh;
   width: 100%;
-  display: flex;
+  margin: auto;
+  display: block;
   justify-content: center;
   transition: 2.2s ease;
   display: box;
+  position: absolute;
+  top: 20%;
+  padding:0 20%;
+}
+.landing-page > * {
+  margin: 5%;
 }
 
 .highscores-page {
@@ -47,37 +54,15 @@ h2 {
 }
 
 .btn {
-  padding: 2% 5%;
-  background-color: rgb(144, 238, 144);
-  margin: 0 200px;
-  height: 50px;
-  width: 100px;
-  border-radius: 25px;
-  box-shadow: 5px 4px 10px rgba( 0, 0, 0, 0.3);
-}
-
-.clear-btn {
-  text-align: right;
-  background-color: transparent;
-  font-weight: 1000;
-  font-size:x-large;
-  color: #f00;
-  border: 1px solid #f00;
-  padding: 0.5%;
-  float: right;
-  margin: 0 5% 0;
-}
-
-.clear-btn:hover {
-  box-shadow: 5px 4px 10px rgba( 0, 0, 0, 0.3);
-}
-
-.answer-btn {
   background-color: #632063;
-  padding: 2% 5%;
+  padding: 0.5% 2%;
   color: #fff;
   border: none;
   border-radius: 10px;
+}
+
+.answer-btn {
+  padding: 2% 5%;
 }
 
 #questions-box h3 {
@@ -97,7 +82,7 @@ h2 {
 /* MAIN */
 main {
   display: none;
-  margin: 8%;
+  margin: auto;
   height: 100vh;
   text-align: center;
   justify-content: center;
@@ -125,11 +110,16 @@ main {
   margin: 2%;
 }
 
+.questions-container {
+  padding: 20%;
+  margin: auto;
+}
+
 #game-timer {
   color: #632063;
   font-size: 120%;
   float: right;
-  margin: 2% 20% 0 0;
+  margin: 2% 3% 0 0;
 }
 
 
@@ -145,14 +135,23 @@ main {
 
 .alert-title {
   font-size: 300%;
-  color: #999
+  color: #999;
+  text-align: left;
+}
+
+#highscores-page {
+  margin-top: 50px;
+}
+
+#game-stats {
+  margin: 50px 0;
 }
 
 /* Table */
 table {
   width: 80%;
-  margin: auto;
-  box-shadow: 5px 4px 10px rgba( 0, 0, 0, 0.3);
+  margin:auto;
+  /* box-shadow: 5px 4px 10px rgba( 0, 0, 0, 0.3); */
 }
 
 th {
@@ -164,17 +163,24 @@ td {
   padding: 1%;
 }
 tr:nth-child(even) {
-  background-color: rgba( 0, 0, 0, 0.2);
+  background-color:rgba(99, 32, 99, 0.2);
 }
 
 tr:nth-child(odd) {
-  background: linear-gradient(#ddd, #2bf);
+  background-color:rgba(99, 32, 99, 0.2);
 }
 
 tr:last-child {
-  background-color: rgb(144, 238, 144);
+  background-color:rgba(99, 32, 99, 0.2);
 }
 
 #end-game-page {
   display: none; /*set default display of end game page to none */
+  margin: 50px 0;
+  padding: 20%;
+  text-align:left;
+}
+
+#score-input {
+  margin: 25px 0;
 }
