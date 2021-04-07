@@ -16,12 +16,12 @@ A small timed coding quiz game to help sharpen those programming skills. Built w
 
 ## Demo
 
-![Gif](/Assets/images/screenshot1.png)
+![Gif](/Assets/images/code-quiz.gif)
 ## Deploymemt
 
-Deployed with [GitHub Pages]()
+Deployed with [GitHub Pages](https://pages.github.com/)
 
-[Live Site]()
+[Live Site](https://loveliiivelaugh.github.io/nu-hw4-coding-quiz/)
 
 ## Credits
 
