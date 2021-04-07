@@ -4,7 +4,7 @@ const questions = [
     question: 'Inside which HTML element do we put the JavaScript?',
     answerA: {
       correct: false,
-      content: `<code>< scripting ></code>`
+      content: `scripting`
     },
     answerB: {
       correct: true,
@@ -20,136 +20,136 @@ const questions = [
     },
   },
   {
-    question: 'What is the corrext JavaScript syntax to change the content of the HTML element below?\n\n<p id="demo">This is a demonstration.</p>',
+    question: 'Why so JavaScript and Java have similar name?',
     answerA: {
       correct: false,
-      content: 'document.getElement("p").innerHTML = "Hello World!";'
+      content: 'JavaScript is a stripped-down version of Java'
     },
     answerB: {
-      correct: false,
-      content: 'A function that is nested inside of an object'
+      correct: true,
+      content: 'JavaScript’s syntax is loosely based on Java’s'
     },
     answerC: {
-      correct: true,
-      content: 'A function that is nested inside of an object'
+      correct: false,
+      content: 'They both originated on the island of Java'
     },
     answerD: {
       correct: false,
-      content: 'A function that is nested inside of an object'
+      content: 'None of the above'
     },
   },
   {
-    question: 'Where is the correct place to insert a JavaScript?',
+    question: 'When a user views a page containing a JavaScript program, which machine actually executes the script?',
     answerA: {
       correct: true,
-      content: 'A function that is nested inside of an object'
+      content: 'The User’s machine running a Web browser'
     },
     answerB: {
       correct: false,
-      content: 'A function that is nested inside of an object'
+      content: 'The Web server'
     },
     answerC: {
       correct: false,
-      content: 'A function that is nested inside of an object'
+      content: 'A central machine deep within Netscape’s corporate offices'
     },
     answerD: {
       correct: false,
-      content: 'A function that is nested inside of an object'
+      content: 'None of the above'
     },
   },
   {
-    question: 'What indicates a function?',
+    question: '______ JavaScript is also called client-side JavaScript.',
     answerA: {
       correct: false,
-      content: 'A function that is nested inside of an object'
+      content: 'Microsoft'
     },
     answerB: {
       correct: true,
-      content: 'A function that is nested inside of an object'
+      content: 'Navigator'
     },
     answerC: {
       correct: false,
-      content: 'A function that is nested inside of an object'
+      content: 'LiveWire'
     },
     answerD: {
       correct: false,
-      content: 'A function that is nested inside of an object'
+      content: 'Native'
     },
   },
   {
-    question: 'What is a method?',
+    question: '__________ JavaScript is also called server-side JavaScript.',
     answerA: {
       correct: false,
-      content: 'A function that is nested inside of an object'
+      content: 'Microsoft'
     },
     answerB: {
       correct: false,
-      content: 'A function that is nested inside of an object'
+      content: 'Navigator'
     },
     answerC: {
-      correct: false,
-      content: 'A function that is nested inside of an object'
+      correct: true,
+      content: 'LiveWire'
     },
     answerD: {
-      correct: true,
-      content: 'A function that is nested inside of an object'
+      correct: false,
+      content: 'Native'
     },
   },
   {
-    question: 'What indicates a function?',
+    question: 'What are variables used for in JavaScript Programs?',
     answerA: {
-      correct: false,
-      content: 'A function that is nested inside of an object'
+      correct: true,
+      content: 'Storing numbers, dates, or other values'
     },
     answerB: {
       correct: false,
-      content: 'A function that is nested inside of an object'
+      content: 'Varying randomly'
     },
     answerC: {
-      correct: true,
-      content: 'A function that is nested inside of an object'
+      correct: false,
+      content: 'Causing high-school algebra flashbacks'
     },
     answerD: {
       correct: false,
-      content: 'A function that is nested inside of an object'
+      content: 'None of the above'
     },
   },
   {
-    question: 'What indicates a function?',
+    question: '_____ JavaScript statements embedded in an HTML page can respond to user events such as mouse-clicks, form input, and page navigation.',
     answerA: {
-      correct: false,
-      content: 'A function that is nested inside of an object'
+      correct: true,
+      content: 'Client-side'
     },
     answerB: {
-      correct: true,
-      content: 'A function that is nested inside of an object'
+      correct: false,
+      content: 'Server-side'
     },
     answerC: {
       correct: false,
-      content: 'A function that is nested inside of an object'
+      content: 'Local'
     },
     answerD: {
       correct: false,
-      content: 'A function that is nested inside of an object'
+      content: 'Native'
     },
   },
   {
-    question: 'What indicates a function?',
+    question: 'Which of the following can’t be done with client-side JavaScript?',
     answerA: {
-      correct: true,
-      content: 'A function that is nested inside of an object'
+      correct: false,
+      content: 'Validating a form'
     },
     answerB: {
       correct: false,
-      content: 'A function that is nested inside of an object'
+      content: 'Sending a form’s contents by email'
     },
     answerC: {
-      correct: false,
-      content: 'A function that is nested inside of an object'
+      correct: true,
+      content: 'Storing the form’s contents to a database file on the server'
     },
     answerD: {
       correct: false,
-      content: 'A function that is nested inside of an object'
+      content: 'None of the above'
     },
   },
 
@@ -251,7 +251,7 @@ const setGameStats = () => {
       <tr>
         <td>${stats.initials} - ${stats.score}</td>
       </tr>`
-      )}
+      ).join("")}
   </table>
   `;
 };
@@ -313,7 +313,7 @@ const alertHandler = (correct) => {
 const checkCounters = () => {
   console.info(questionCounter, questions.length, questionCounter === questions.length);
   //if the questionCounter is equal to or somehow greater than questions.length the game will end.
-  if ( questionCounter >= questions.length ) {
+  if ( questionCounter == questions.length - 1 ) {
     alert("Congratulation's, you have won! confetti confetti.");
     endGame();
   }
@@ -324,6 +324,7 @@ const handleAnswer = (event) => {
 
   //check the counters to see if we should end the game.
   checkCounters();
+
 
   //assign a shorter variable for the data being passed by the dataset attribute.
   const isCorrect = event.target.dataset.correct;
@@ -387,6 +388,8 @@ const handleLocalStorage = (initials) => {
 
 //function that handles the count down of the clock.
 const countDown = () => { 
+  //if were not on the main page where we play the game then stop the timer
+  if ( document.getElementById("main-section").style.display == "none" ) { clearInterval(timer); }
   //if time is less than or equal to 0 then end the game.
   if (time <= 0) { 
     //stops the countdown and resets the timer.
@@ -434,6 +437,7 @@ const switchPage = (page) => {
       break;
     case "toEndGame":
       //switch from main page to end page
+      document.querySelector("#landing-page").style.display = "none";
       document.getElementById("main-section").style.display = "none";
       document.getElementById("end-game-page").style.display = "block";
       break;

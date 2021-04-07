@@ -6,13 +6,17 @@ A small timed coding quiz game to help sharpen those programming skills. Built w
 
 ## Screenshots
 
-![Screenshot 1]()
+![Screenshot 1](/Assets/images/screenshot1.png)
 
-![Screenshot 2]()
+![Screenshot 2](/Assets/images/screenshot2.png)
+
+![Screenshot 3](/Assets/images/screenshot3.png)
+
+![Screenshot 4](/Assets/images/screenshot4.png)
 
 ## Demo
 
-![Gif]()
+![Gif](/Assets/images/screenshot1.png)
 ## Deploymemt
 
 Deployed with [GitHub Pages]()
